@@ -83,6 +83,9 @@ def balance_dataset_wrt_column_values(dataset: pd.DataFrame, target_column: str,
     return balanced_dataset
     
 
+################################################################
+# EXAMPLE #################################
+# NOT INTENDED FOR PRODUCTION CODE #
 if __name__ == '__main__':
     import os
     import matplotlib.pyplot as plt
@@ -95,7 +98,6 @@ if __name__ == '__main__':
     print(os.getcwd())
     dataset = pd.read_csv("data/loan_data.csv")
     # UNBALANCED DATA wrt TARGET
-    # dataset = balance_dataset_wrt_column_values(dataset, 'TARGET')
     value_distribution = distribution_of_values_in_column(dataset, 'TARGET', percentage=False)
     bar_plot(value_distribution.index,value_distribution["TARGET"].tolist())
     

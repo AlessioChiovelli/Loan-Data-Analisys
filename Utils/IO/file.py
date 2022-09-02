@@ -6,8 +6,8 @@ def pretty_print_of_dict(source: dict, file_name: str, type_output: str = "txt",
     Args:
         stats_dict (dict): source dictionary
         file_name (str): name of the output file
-        type_output OPTIONAL (str): type of file output
-        nested_level OPTIONAL (int): if the dictionary that you wanna print is nested with a certain level of depth
+        type_output (str, optional): type of file output
+        nested_level (int, optional): if the dictionary that you wanna print is nested with a certain level of depth
     """
     assert len(file_name) > 0
     logging.info(f"@@ METHOD CALL: pretty_print_of_dict\n")

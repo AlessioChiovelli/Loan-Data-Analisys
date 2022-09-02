@@ -62,7 +62,7 @@ def distribution_of_values_in_column(dataset: pd.DataFrame, target_column: str, 
     Returns:
         pd.Series: The distribution in percentage of each different value 
     """    
-    counter = dataset.groupby(target_column)[target_column].count()
+    counter = dataset.groupby(target_column, as_index=False)[target_column].count()
     return (counter / dataset.shape[0])*100 if percentage else counter
 
 def balance_dataset_wrt_column_values(dataset: pd.DataFrame, target_column: str, bf_cutting: str = True) -> pd.DataFrame:
@@ -78,14 +78,28 @@ def balance_dataset_wrt_column_values(dataset: pd.DataFrame, target_column: str,
     """    
     value_distribution = distribution_of_values_in_column(dataset, target_column, percentage=False)
     threshold = 1000 # TODO: shold be absolute or a percentage???
-    if bf_cutting: threshold = min(value_distribution)
-    balanced_dataset = dataset.groupby(target_column).apply(lambda group: group.sample(frac=1)[:threshold])
+    if bf_cutting: threshold = min(value_distribution[target_column])
+    balanced_dataset = dataset.groupby(target_column, as_index=False).apply(lambda group: group.sample(frac=1)[:threshold])
     return balanced_dataset
     
 
 if __name__ == '__main__':
     import os
+    import matplotlib.pyplot as plt
+    import seaborn as sns 
+    
+    def bar_plot(x, y):
+        g = sns.barplot(x=x, y=y)
+        plt.show()
+        
     print(os.getcwd())
     dataset = pd.read_csv("data/loan_data.csv")
-    balance_dataset_wrt_column_values(dataset, 'TARGET')
+    # UNBALANCED DATA wrt TARGET
+    # dataset = balance_dataset_wrt_column_values(dataset, 'TARGET')
+    value_distribution = distribution_of_values_in_column(dataset, 'TARGET', percentage=False)
+    bar_plot(value_distribution.index,value_distribution["TARGET"].tolist())
     
+    # BALANCE DATA wrt TARGET
+    dataset = balance_dataset_wrt_column_values(dataset, 'TARGET')
+    value_distribution = distribution_of_values_in_column(dataset, "TARGET", percentage=False)
+    bar_plot(value_distribution.index,value_distribution["TARGET"].tolist())

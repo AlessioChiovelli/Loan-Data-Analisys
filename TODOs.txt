@@ -1,0 +1,29 @@
+Cose da fare
+
+--distribuzione dell'età in base al sesso
+
+--Vedere la percentuale di pagatori solventi/insolventi in base al
+
+    ->Conteggio figli
+    ->Genere
+    ->Possesso di una macchina
+
+--Cercare di capire l'età media dei richiedenti di prestito (per capire la clientela della banca)
+
+--Stipendio medio in base al sesso
+
+--Tasso di insolvenza in base al mese di nascita
+
+--Tasso di insolvenza in base all'educazione
+
+--Tasso di insolvenza in base allo status matrimonio
+
+--Tasso di insolvenza in base ad età ed educazione
+
+--Tasso di insolvenza in base allo status matrimonio e conteggio figli
+
+--Tasso di insolvenza in base conteggio figli e educazione
+
+--Tasso di insolvenza in base conteggio figli e educazione e status matrimonio
+
+--Tasso di insolvenza in base al possesso di una macchina, matrimonio e conteggio figli

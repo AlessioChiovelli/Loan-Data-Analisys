@@ -91,12 +91,23 @@ if __name__ == '__main__':
     import matplotlib.pyplot as plt
     import seaborn as sns 
     
+    dataset = pd.read_csv("data/loan_data.csv")
+    print(os.getcwd())
+
+
     def bar_plot(x, y):
         g = sns.barplot(x=x, y=y)
         plt.show()
-        
-    print(os.getcwd())
-    dataset = pd.read_csv("data/loan_data.csv")
+
+    # useful for graphically showing a correlation between two columns
+    def scatter_plot(dataset: pd.DataFrame, x: str, y: str) -> None:
+        diagram = dataset.plot.scatter(x = x, y = y)
+        plt.show()
+
+    # TODO sarebbe meglio passargli in input invece che tutto il dataset un dataset ripulito da outliers 
+    # oppure limitare la visualizzazione a un certo range stabilito a posteriori
+    scatter_plot(dataset, "CNT_CHILDREN", "AMT_INCOME_TOTAL")
+
     # UNBALANCED DATA wrt TARGET
     value_distribution = distribution_of_values_in_column(dataset, 'TARGET', percentage=False)
     bar_plot(value_distribution.index,value_distribution["TARGET"].tolist())

@@ -37,7 +37,7 @@ def get_percentage_of_NaN_in_columns(dataset: pd.DataFrame) -> pd.Series:
     percentage_of_NaN_for_column = dataset.isnull().sum() *100/dataset.shape[0]
     return percentage_of_NaN_for_column
 
-def filter_NaN_values_by_threshold(dataset: pd.DataFrame, threshold: int = 20) -> pd.Series:
+def filter_NaN_values_by_threshold(dataset: pd.DataFrame, percentage_threshold: float = 20.0) -> pd.Series:
     """Retrieve only the columns of the dataset that have less than the given threshold of NaN elements
 
     Args:
@@ -48,7 +48,7 @@ def filter_NaN_values_by_threshold(dataset: pd.DataFrame, threshold: int = 20) -
         pd.Series: The columns that match the condition
     """    
     null_columns = get_percentage_of_NaN_in_columns(dataset)
-    filtered_cols = null_columns[null_columns < threshold]
+    filtered_cols = null_columns[null_columns < percentage_threshold]
     return filtered_cols
 
 def distribution_of_values_in_column(dataset: pd.DataFrame, target_column: str, percentage: bool = True) -> pd.Series:

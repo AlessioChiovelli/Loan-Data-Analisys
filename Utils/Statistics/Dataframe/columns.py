@@ -99,6 +99,8 @@ if __name__ == '__main__':
         g = sns.barplot(x=x, y=y)
         plt.show()
 
+
+    # WORK IN PROGRESS
     # useful for graphically showing a correlation between two columns
     def scatter_plot(dataset: pd.DataFrame, x: str, y: str) -> None:
         diagram = dataset.plot.scatter(x = x, y = y)
@@ -106,7 +108,13 @@ if __name__ == '__main__':
 
     # TODO sarebbe meglio passargli in input invece che tutto il dataset un dataset ripulito da outliers 
     # oppure limitare la visualizzazione a un certo range stabilito a posteriori
-    scatter_plot(dataset, "CNT_CHILDREN", "AMT_INCOME_TOTAL")
+    lista_interessante = ["CNT_CHILDREN", "AMT_INCOME_TOTAL"]
+    df = dataset[lista_interessante]
+    df = df[df.AMT_INCOME_TOTAL < (wealth_threashold := df.AMT_INCOME_TOTAL.mean() + 3 * df.AMT_INCOME_TOTAL.std())]
+    scatter_plot(df[df.CNT_CHILDREN < 11], *lista_interessante)
+    # scatter_plot(dataset, "CNT_CHILDREN", "AMT_INCOME_TOTAL")
+
+
 
     # UNBALANCED DATA wrt TARGET
     value_distribution = distribution_of_values_in_column(dataset, 'TARGET', percentage=False)

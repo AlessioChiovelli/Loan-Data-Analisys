@@ -136,7 +136,7 @@ if __name__ == '__main__':
 
 
     # UNBALANCED DATA wrt TARGET
-    value_distribution = distribution_of_values_in_column(dataset, 'TARGET', percentage=False)
+    value_distribution = distribution_of_values_in_column(dataset, 'TARGET', percentage=True)
     bar_plot(value_distribution.index,value_distribution["TARGET"].tolist())
     
     # BALANCE DATA wrt TARGET

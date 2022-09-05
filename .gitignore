@@ -2,3 +2,7 @@
 data/
 __pycache__/
 *.pyc
+*.png
+Utils/IO/__pycache__/*
+Utils/Statistics/Dataframe/__pycache__/*
+*.log

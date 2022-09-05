@@ -1,6 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+# TODO complete the comment on seaborn style
 sns.set()  # Set style as seaborn even with 
 
 # @@ Personal Libraries

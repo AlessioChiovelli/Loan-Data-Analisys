@@ -12,9 +12,8 @@ if __name__ == '__main__':
     # distribution_of_values_in_column(dataset,"TARGET")
     # pretty_print_of_dict(stats, file_name="initial_stats")
 
-    #question_1.evaluate()
-    #question_1.evaluate()
-    #question_6.evaluate()
+    question_1.evaluate()
+    question_6.evaluate()
     question_7.evaluate()
 
 

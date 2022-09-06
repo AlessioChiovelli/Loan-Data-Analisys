@@ -35,16 +35,16 @@ def evaluate():
     slices = list(temp)
     # explode = [0, 0, 0, 0, .15]  # if you wanna pull a slice from the center, uncomment this
 
-    # # prepare plotting
-    # colors = ["#004c6d","#3c6b88", # color palette found on https://www.learnui.design/tools/data-color-picker.html 
-    #         "#658ca4", "#8eaec1",
-    #         "#b8d2e0", "#e4f6ff" ]
+    # prepare plotting
+    colors = ["#004c6d","#3c6b88", # color palette found on https://www.learnui.design/tools/data-color-picker.html 
+            "#658ca4", "#8eaec1",
+            "#b8d2e0", "#e4f6ff" ]
 
-    # plt.title("Number of People by Education Level")
-    # plt.pie(slices, labels = edu_labels, # explode = explode, 
-    #     colors = colors[1:], wedgeprops = {"edgecolor": "black"})
-    # plt.tight_layout(pad = .8)
-    # plt.show()
+    plt.title("Number of People by Education Level")
+    plt.pie(slices, labels = edu_labels, # explode = explode, 
+        colors = colors[1:], wedgeprops = {"edgecolor": "black"})
+    plt.tight_layout(pad = .8)
+    plt.show()
 
 
 

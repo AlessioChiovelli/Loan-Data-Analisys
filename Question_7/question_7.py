@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 from turtle import color
-=======
->>>>>>> a2ed8d43a297f01dab418594c2e49beb62ca0755
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns

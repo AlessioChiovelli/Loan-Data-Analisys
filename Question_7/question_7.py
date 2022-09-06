@@ -24,6 +24,7 @@ def evaluate():
     
     # Evaluate ratio between the positive TARGET and the total number of TARGET for each family status
     ratio =  dataset.groupby("NAME_FAMILY_STATUS").apply(lambda family_group: (100*family_group[family_group.TARGET == 1].count()/family_group["TARGET"].count())["TARGET"])
+    axes[1].set_ylabel("Percentage of Insolvency Ratio")
     sns.barplot(x=ratio.index.tolist(), y=ratio.values.tolist(),ax=axes[1])
     plt.show()
     

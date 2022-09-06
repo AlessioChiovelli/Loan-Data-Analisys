@@ -13,8 +13,8 @@ if __name__ == '__main__':
     # pretty_print_of_dict(stats, file_name="initial_stats")
 
     #question_1.evaluate()
-    question_1.evaluate()
-    question_6.evaluate()
+    #question_1.evaluate()
+    #question_6.evaluate()
     question_7.evaluate()
 
 

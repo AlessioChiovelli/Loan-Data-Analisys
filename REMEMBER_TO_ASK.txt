@@ -1,0 +1,5 @@
+Per le domande 3-4-5-6
+la percentuale di persone che ha la caratteristica X (Ad esempio, essere maschi, avere la macchina ecc)
+è calcolata rispetto al totale dei risultati della query.
+
+Normalizzarla rispetto alla totalità del dataset

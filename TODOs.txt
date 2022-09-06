@@ -27,3 +27,5 @@ Cose da fare
 --Tasso di insolvenza in base conteggio figli e educazione e status matrimonio
 
 --Tasso di insolvenza in base al possesso di una macchina, matrimonio e conteggio figli
+
+--Tasso di insolvenza in base allo status matrimonio e sesso 

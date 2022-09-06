@@ -6,3 +6,5 @@ __pycache__/
 Utils/IO/__pycache__/*
 Utils/Statistics/Dataframe/__pycache__/*
 *.log
+bigdara.log
+*.jpg

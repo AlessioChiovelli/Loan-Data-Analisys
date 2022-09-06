@@ -18,6 +18,8 @@ Cose da fare
 
 --Tasso di insolvenza in base allo status matrimonio
 
+--Tasso di insolvenza in base allo status matrimonio e sesso 
+
 --Tasso di insolvenza in base ad età ed educazione
 
 --Tasso di insolvenza in base allo status matrimonio e conteggio figli

@@ -47,9 +47,9 @@ def evaluate():
     sns.histplot(data = dataset_XNA, stat = "probability")
     plt.show()
     
-    num_M = dataset_M.value_counts().to_dict()
-    num_F = dataset_F.value_counts().to_dict()
-    num_XNA = dataset_XNA.value_counts().to_dict()
+    num_M = dataset_M["TARGET"].value_counts().to_dict()
+    num_F = dataset_F["TARGET"].value_counts().to_dict()
+    num_XNA = dataset_XNA["TARGET"].value_counts().to_dict()
     labels = []
     values = []
     

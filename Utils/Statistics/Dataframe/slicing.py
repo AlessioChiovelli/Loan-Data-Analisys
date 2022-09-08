@@ -3,7 +3,7 @@ import seaborn as sns
 
 def unique_values_of_cols(dataset: pd.DataFrame, columns_to_select: list)-> dict:
     _dict = dict()
-    for col in columns_to_select:_dict[col] = dataset[col].unique()
+    for col in columns_to_select:_dict[col] = list(dataset[col].unique())
     return _dict
 
 
@@ -17,6 +17,7 @@ def slicing_DF_target_based_on_columns_value(dataset : pd.DataFrame,columns: lis
     """
     all_columns = columns
     all_columns.extend(target_columns)
+    all_columns = list(set(all_columns))
     df_to_slice = dataset[all_columns].copy()
     # print(df_to_slice)
     

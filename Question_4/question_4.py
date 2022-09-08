@@ -31,7 +31,7 @@ def evaluate():
     labels_0,labels_1 = list(df_0_results.keys()),list(df_1_results.keys())
     percs_0,percs_1 = list(df_0_results.values()),list(df_1_results.values())
     ax = plt.figure().gca()
-    plt.title("Pie chart of (Un)Solvent clients wrt children counts")
+    plt.title("Bar chart of (Un)Solvent clients wrt children counts")
     ax.xaxis.set_major_locator(MaxNLocator(integer=True))
     plt.bar(np.array(labels_0),np.array(percs_0), color = 'G', label = "Solving Clients")
     plt.bar(np.array(labels_1),np.array(percs_1), color = 'R', label = "Unsolving Clients")

@@ -18,19 +18,22 @@ def evaluate():
     len_df = dataset.shape[0]
     _dict = unique_values_of_cols(dataset,columns)
     
-    print(_dict)
     _dict_Y = _dict.copy()
     _dict_N = _dict.copy()
     
     _dict_Y["FLAG_OWN_CAR"] = list(_dict_Y["FLAG_OWN_CAR"][1])
     _dict_N["FLAG_OWN_CAR"] = list(_dict_N["FLAG_OWN_CAR"][0])
     
-    print(_dict_Y)
-    print(_dict_N)
+    # print(_dict)
+    # print(_dict_Y)
+    # print(_dict_N)
     
     dataset_Y = slicing_DF_target_based_on_columns_value(dataset = dataset,columns = columns, values_of_columns = _dict_Y, target_columns = target)
     dataset_N = slicing_DF_target_based_on_columns_value(dataset = dataset,columns = columns, values_of_columns = _dict_N, target_columns = target)
-    
+    print(dataset_Y)
+    print(dataset_N)
+    print(type(dataset_Y))
+    print(type(dataset_N))
     plt.title("Histogram of people HAVING cars")
     sns.histplot(data = dataset_Y, stat = "probability")
     plt.show()
@@ -38,8 +41,8 @@ def evaluate():
     sns.histplot(data = dataset_N, stat = "probability")
     plt.show()
     
-    num_Y = dataset_Y.value_counts().to_dict()
-    num_N = dataset_N.value_counts().to_dict()
+    num_Y = dataset_Y["TARGET"].value_counts().to_dict()
+    num_N = dataset_N["TARGET"].value_counts().to_dict()
     labels = []
     values = []
     

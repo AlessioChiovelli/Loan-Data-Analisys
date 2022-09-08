@@ -15,53 +15,61 @@ def evaluate():
     columns = ['CODE_GENDER']
     target = ['TARGET']
     dataset = pd.read_csv(DATASET_PATH)
-    len_df = dataset.shape[0]
     _dict = unique_values_of_cols(dataset,columns)
+    len_df = dataset.shape[0]
+
     
-    dataset_sliced = slicing_DF_target_based_on_columns_value(dataset = dataset,columns = columns, values_of_columns = _dict, target_columns = ['TARGET'])
+    # dataset_sliced = slicing_DF_target_based_on_columns_value(dataset = dataset,columns = columns, values_of_columns = _dict, target_columns = ['TARGET'])
     
-    plt.title("Histogram Divided By Sex")
-    sns.histplot(data = dataset_sliced, stat = "probability", hue = "sex")
+    # plt.title("Histogram Divided By Sex")
+    # sns.histplot(data = dataset_sliced, stat = "probability", hue = "sex")
+    # plt.show()
+    
+    _dict_M = _dict.copy()
+    _dict_F = _dict.copy()
+    _dict_XNA = _dict.copy()
+    
+    _dict_M["CODE_GENDER"] = list(_dict_M["CODE_GENDER"][0])
+    _dict_F["CODE_GENDER"] = list(_dict_F["CODE_GENDER"][1])
+    _dict_XNA["CODE_GENDER"] = list(_dict_XNA["CODE_GENDER"][2])
+    
+    dataset_M = slicing_DF_target_based_on_columns_value(dataset = dataset,columns = columns, values_of_columns = _dict_M, target_columns = target)
+    dataset_F = slicing_DF_target_based_on_columns_value(dataset = dataset,columns = columns, values_of_columns = _dict_F, target_columns = target)
+    dataset_XNA = slicing_DF_target_based_on_columns_value(dataset = dataset,columns = columns, values_of_columns = _dict_XNA, target_columns = target)
+    
+    plt.title("Histogram of M")
+    sns.histplot(data = dataset_M, stat = "probability")
+    plt.show()
+    plt.title("Histogram of F")
+    sns.histplot(data = dataset_F, stat = "probability")
+    plt.show()
+    plt.title("Histogram of XNA")
+    sns.histplot(data = dataset_XNA, stat = "probability")
     plt.show()
     
-    # _dict_M = _dict.copy()
-    # _dict_F = _dict.copy()
-    # _dict_XNA = _dict.copy()
+    num_M = dataset_M.value_counts().to_dict()
+    num_F = dataset_F.value_counts().to_dict()
+    num_XNA = dataset_XNA.value_counts().to_dict()
+    labels = []
+    values = []
     
-    # # print(_dict_M)
-    # # print(_dict_F)
-    # # print(_dict_XNA)
+    if len(list(num_M.values())) != 0:
+        num_M = {k : v/len_df for k,v in num_M.items()} 
+        labels.extend(["M_0","M_1"])
+        values.extend(list(num_M.values()))
+        
+    if len(list(num_F.values())) != 0:
+        num_F = {k : v/len_df for k,v in num_F.items()} 
+        labels.extend(["F_0","F_1"])
+        values.extend(list(num_F.values()))
+
+    if len(list(num_XNA.values())) != 0:
+        num_XNA = {k : v/len_df for k,v in num_XNA.items()} 
+        labels.extend(["XNA_0","XNA_1"])
+        values.extend(list(num_XNA.values()))
     
-    # _dict_M["CODE_GENDER"] = list(_dict_M["CODE_GENDER"][0])
-    # _dict_F["CODE_GENDER"] = list(_dict_F["CODE_GENDER"][1])
-    # _dict_XNA["CODE_GENDER"] = list(_dict_XNA["CODE_GENDER"][2])
-    
-    # dataset_M = slicing_DF_target_based_on_columns_value(dataset = dataset,columns = columns, values_of_columns = _dict_M, target_columns = ['TARGET'])
-    # dataset_F = slicing_DF_target_based_on_columns_value(dataset = dataset,columns = columns, values_of_columns = _dict_F, target_columns = ['TARGET'])
-    # dataset_XNA = slicing_DF_target_based_on_columns_value(dataset = dataset,columns = columns, values_of_columns = _dict_XNA, target_columns = ['TARGET'])
-    
-    # print(dataset_M)
-    # print(dataset_F)
-    # print(dataset_XNA)
-    
-    # plt.title("Histogram of M")
-    # sns.histplot(data = dataset_M, stat = "probability", hue = "sex")
-    # plt.show()
-    # plt.title("Histogram of F")
-    # sns.histplot(data = dataset_F, stat = "probability", hue = "sex")
-    # plt.show()
-    # plt.title("Histogram of XNA")
-    # sns.histplot(data = dataset_XNA, stat = "probability", hue = "sex")
-    # plt.show()
-    
-    
-    # print(dataset)
-    # for k,v in unique_values_of_cols(dataset, columns).items():
-    #     print(f'key:{k} value:{v}')
-    
-    
-    # df_sliced = slicing_DF_target_based_on_columns_value(dataset = dataset, columns = columns, values_of_columns = _dict, target_columns = target)
-    # print(df_sliced)
+    plt.pie(values, labels = labels, shadow = True, autopct='%1.1f%%')
+    plt.show()
     
 if __name__ == '__main__':
     evaluate()

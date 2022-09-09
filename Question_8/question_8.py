@@ -70,3 +70,7 @@ def evaluate():
     sns.histplot(higher, x="AGE", kde=True, ax=axs[1, 1],
                     stat="density", element="step", bins=30, binwidth=1, hue="EDU")
     plt.show()
+
+    # TODO, actually this procedure is wrong, it's just showing the frequency, for each level of education, wrt age.
+    # to do what i meant to do a moving average is needed in order to perform something similar to a k means and estimate the prob of insolvency 
+    # (the ratio between the normalized positive targets and all the targets)

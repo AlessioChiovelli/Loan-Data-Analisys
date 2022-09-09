@@ -50,6 +50,18 @@ def evaluate():
     plt.ylabel('Mean Paycheck')
     plt.legend()
     plt.show()
+    
+    ax = plt.figure().gca()
+    plt.title("ErrorBar Plot Of Paycheck Wrt Sex and Education")
+    for key,df in final_df_in_np.items():
+        key_map = mapping_of_keys[key]
+        # # color = random_esadecimale
+        plt.errorbar(key_map,np.mean(df), np.std(df),fmt='o', linewidth=2, capsize=6, label = key)
+    plt.xlim(right = max(list(mapping_of_keys.values())))
+    plt.xlabel('Gender/Education code')
+    plt.ylabel('Mean Paycheck')
+    plt.legend()
+    plt.show()
 
     
 

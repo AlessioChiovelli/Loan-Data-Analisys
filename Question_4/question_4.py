@@ -40,6 +40,7 @@ def evaluate():
     plt.legend()
     plt.show()
     
+    # TODO : Fix the size of the legend and create a random exadecimal color for the graphics
     ax = plt.figure().gca()
     plt.title("ErrorBar Plot Of Paycheck Wrt Sex")
     for idx in range(len(dataset_gender_vals)):

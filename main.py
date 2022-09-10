@@ -15,17 +15,23 @@ from Question_10 import question_10 as question_10
 from Question_12 import question_12 as question_12
 from Question_13 import question_13 as question_13
 from Question_14 import question_14 as question_14
+from Question_15 import question_15 as question_15
 
 if __name__ == '__main__':
     # columns_filtered = filter_NaN_values_by_threshold(dataset = dataset, threshold = 10)
     # stats = get_stats_of_each_column(dataset)
     # distribution_of_values_in_column(dataset,"TARGET")
     # pretty_print_of_dict(stats, file_name="initial_stats")
+    # question_1.evaluate()
     # question_2_1.evaluate()
     # question_2_2.evaluate()
     # question_2_3.evaluate()
     # question_4.evaluate()
-    # question_1.evaluate()
     # question_6.evaluate()
     # question_7.evaluate()
-    question_10.evaluate()
+    question_8.evaluate()
+    # question_10.evaluate()
+    # question_12.evaluate()
+    # question_13.evaluate()
+    # question_14.evaluate()
+    question_15.evaluate()

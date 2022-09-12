@@ -18,11 +18,11 @@ def evaluate():
     #df2["NAME_FAMILY_STATUS"].value_counts().plot(kind="pie")
     #plt.show()
 
-    # df2 = df2.groupby(["CNT_CHILDREN", "NAME_FAMILY_STATUS", "NAME_EDUCATION_TYPE"]).filter(lambda df: df[["CNT_CHILDREN", "NAME_FAMILY_STATUS", "NAME_EDUCATION_TYPE"]].count()>30) # da rimuovere
+    df2 = df2.groupby(["CNT_CHILDREN", "NAME_FAMILY_STATUS", "NAME_EDUCATION_TYPE"]).filter(lambda df: df.TARGET.count() > 50) 
     df3 = df2.groupby(["CNT_CHILDREN", "NAME_FAMILY_STATUS", "NAME_EDUCATION_TYPE"]).mean()*100
-    df4 = df3.unstack(level=-1).plot.bar()
-    print(df4)
-    #df3["NAME_EDUCATION_TYPE"].plot(figsize = (8,8), title="Insolvency rate wrt Education Level grouped by Family Status and number of children")
+    df3.unstack(level=-1).plot.bar()
+    
+    # plotting
     plt.tight_layout()
     plt.show()
         

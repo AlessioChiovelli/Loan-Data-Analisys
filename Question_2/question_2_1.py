@@ -37,14 +37,14 @@ def evaluate():
     dataset_F = slicing_DF_target_based_on_columns_value(dataset = dataset,columns = columns, values_of_columns = _dict_F, target_columns = target)
     dataset_XNA = slicing_DF_target_based_on_columns_value(dataset = dataset,columns = columns, values_of_columns = _dict_XNA, target_columns = target)
     
-    plt.title("Histogram of M")
-    sns.histplot(data = dataset_M, stat = "probability")
+    plt.title("Histogram of (un)Solvent M clients")
+    sns.histplot(data = dataset_M, stat = "probability", color = "blue")
     plt.show()
-    plt.title("Histogram of F")
-    sns.histplot(data = dataset_F, stat = "probability")
+    plt.title("Histogram of (un)Solvent F clients")
+    sns.histplot(data = dataset_F, stat = "probability", color = "red")
     plt.show()
-    plt.title("Histogram of XNA")
-    sns.histplot(data = dataset_XNA, stat = "probability")
+    plt.title("Histogram of (un)Solvent XNA clients")
+    sns.histplot(data = dataset_XNA, stat = "probability", color = "black")
     plt.show()
     
     num_M = dataset_M["TARGET"].value_counts().to_dict()
@@ -68,6 +68,7 @@ def evaluate():
         labels.extend(["XNA_0","XNA_1"])
         values.extend(list(num_XNA.values()))
     
+    plt.title("Piecharts of (un)Solvent clients wrt Sex")
     plt.pie(values, labels = labels, shadow = True, autopct='%1.1f%%')
     plt.show()
     

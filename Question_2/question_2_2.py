@@ -35,10 +35,10 @@ def evaluate():
     print(type(dataset_Y))
     print(type(dataset_N))
     plt.title("Histogram of people HAVING cars")
-    sns.histplot(data = dataset_Y, stat = "probability")
+    sns.histplot(data = dataset_Y, stat = "probability", color = "green")
     plt.show()
     plt.title("Histogram of people NOT HAVING cars")
-    sns.histplot(data = dataset_N, stat = "probability")
+    sns.histplot(data = dataset_N, stat = "probability", color = "red")
     plt.show()
     
     num_Y = dataset_Y["TARGET"].value_counts().to_dict()
@@ -55,7 +55,8 @@ def evaluate():
         num_N = {k : v/len_df for k,v in num_N.items()} 
         labels.extend(["N_0","N_1"])
         values.extend(list(num_N.values()))
-    
+        
+    plt.title("Histogram of (un)Solvent clients With/Without Car(s)")
     plt.pie(values, labels = labels, shadow = True, autopct='%1.1f%%')
     plt.show()
     

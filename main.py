@@ -20,6 +20,7 @@ from Question_14 import question_14 as question_14
 from Question_15 import question_15 as question_15
 
 from Pearson import pearson as pearson
+from Information_Gain import ig as ig
 
 if __name__ == '__main__':
     # columns_filtered = filter_NaN_values_by_threshold(dataset = dataset, threshold = 10)
@@ -41,4 +42,5 @@ if __name__ == '__main__':
     # question_13.evaluate()
     # question_14.evaluate()
     # question_15.evaluate()
-    pearson.evaluate()
+    # pearson.evaluate()
+    ig.evaluate()

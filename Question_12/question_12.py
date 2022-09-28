@@ -1,14 +1,15 @@
 
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-# TODO complete the comment on seaborn style
-sns.set()  # Set style as seaborn even with 
+
 
 # @@ Personal Libraries
 from CONFIG import DATASET_PATH
 # @@
 def evaluate():
+    import pandas as pd
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+    # TODO complete the comment on seaborn style
+    sns.set()  # Set style as seaborn even with 
     """Evaluate the question, and try to give an answer.
     """    
     dataset = pd.read_csv(DATASET_PATH)
@@ -26,6 +27,11 @@ def evaluate():
     ratio["FLAG_OWN_CAR"] = ratio["FLAG_OWN_CAR"].apply(lambda element: 1 if element == "Y" else 0)
     _unique_values_family_status: np.array = ratio["NAME_FAMILY_STATUS"].unique()
     _family_status_temp_dict = dict(zip(_unique_values_family_status,range(len(_unique_values_family_status))))
-    ratio["NAME_FAMILY_STATUS"] = ratio["NAME_FAMILY_STATUS"].apply(lambda element: _family_status_temp_dict[element])
-    fig = px.scatter_3d(x=ratio['CNT_CHILDREN'].values, y=ratio['NAME_FAMILY_STATUS'].values, z=ratio[0].values, symbol=ratio['NAME_FAMILY_STATUS'].values, color=ratio['FLAG_OWN_CAR'].values)
+    #ratio["NAME_FAMILY_STATUS"] = ratio["NAME_FAMILY_STATUS"].apply(lambda element: _family_status_temp_dict[element])
+    #fig = px.scatter_3d(x=ratio['CNT_CHILDREN'].values, y=ratio['NAME_FAMILY_STATUS'].values, z=ratio[0].values, symbol=ratio['NAME_FAMILY_STATUS'].values, color=ratio['FLAG_OWN_CAR'].values)
+    fig = px.scatter_3d(ratio,x='CNT_CHILDREN', y='NAME_FAMILY_STATUS', z=0, symbol='FLAG_OWN_CAR', color="NAME_FAMILY_STATUS")
+    # fig.update_layout(scene = dict(
+    #                 xaxis_title='X AXIS TITLE',
+    #                 yaxis_title='Y AXIS TITLE',
+    #                 zaxis_title='Z AXIS TITLE'))
     fig.show()

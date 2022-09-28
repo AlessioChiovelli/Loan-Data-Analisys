@@ -16,7 +16,12 @@ def evaluate():
         temp = df[["TARGET", column]].corr(method="pearson").iloc[0][1]
         pearson_corr[column] = temp
 
-    # print(pearson_corr)
+    plt.figure()
+    heatmap = sns.heatmap(df[["TARGET"]+PEARSON_COLUMNS].corr(method="pearson"), vmin=-1, vmax=1, cmap='BrBG')
+    # save heatmap as .png file
+    # dpi - sets the resolution of the saved image in dots/inches
+    # bbox_inches - when set to 'tight' - does not allow the labels to be cropped
+    plt.savefig('heatmap.png', dpi=400, bbox_inches='tight')
     
     
 

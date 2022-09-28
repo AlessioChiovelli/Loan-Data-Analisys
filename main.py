@@ -19,6 +19,8 @@ from Question_13 import question_13 as question_13
 from Question_14 import question_14 as question_14
 from Question_15 import question_15 as question_15
 
+from Pearson import pearson as pearson
+
 if __name__ == '__main__':
     # columns_filtered = filter_NaN_values_by_threshold(dataset = dataset, threshold = 10)
     # stats = get_stats_of_each_column(dataset)
@@ -34,8 +36,9 @@ if __name__ == '__main__':
     # question_8.evaluate()
     # question_9.evaluate()
     # question_10.evaluate()
-    question_11.evaluate()
+    # question_11.evaluate()
     # question_12.evaluate()
     # question_13.evaluate()
     # question_14.evaluate()
     # question_15.evaluate()
+    pearson.evaluate()

@@ -14,13 +14,14 @@ from CONFIG import DATASET_PATH, INFORMATION_GAIN_COLUMNS
 # @@
 
 def compute_entropy(column: pd.Series) -> float:
+    '''Compute entropy for a given Serie.'''
     conta_valori = column.value_counts()
     total = column.count()
     prob_per_class = conta_valori / total  # probability for each class
     log_prob = - np.log2(prob_per_class)
     # print(prob_per_class)
     # print(log_prob)
-    entropy = (prob_per_class*log_prob).sum()
+    entropy = (prob_per_class * log_prob).sum()   # la meno sommatoria di p(xi) * log[p(xi)]
     return entropy
 
 def evaluate():
@@ -33,11 +34,12 @@ def evaluate():
     for column in INFORMATION_GAIN_COLUMNS:
 
         probabilities = df[["TARGET", column]].groupby(by=column).count() / df[["TARGET", column]].count()['TARGET']
-    
         conditional_entropies = df[["TARGET", column]].groupby(by=column).apply(
                                                         lambda df: compute_entropy(df.TARGET))  # ENTROPIE CONDIZIONATE A X = Xi
-
         conditional_entropy = (probabilities["TARGET"] * conditional_entropies).sum()
+
+        # Information gain IG(Y|X), hence the information hidden in X about Y, 
+        # is the difference of entropy of Y and the conditional entropy of Y given X
         info_gain = entropy_of_target - conditional_entropy  # H(Y) - H(Y|X)
         info_gain_dict[column] = info_gain
         # print(f"Information Gain of column {column} is {info_gain}")

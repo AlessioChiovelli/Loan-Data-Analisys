@@ -43,4 +43,9 @@ if __name__ == '__main__':
     # question_14.evaluate()
     # question_15.evaluate()
     # pearson.evaluate()
-    ig.evaluate()
+    ig_dict = ig.evaluate()
+    pearson_dict = pearson.evaluate()
+    
+    # for k,v in ig_dict_sorted.items():print(f'key : {k}\tvalue : {v}')
+    # print(3*'\n', 10 * '*', 3*'\n')
+    # for k,v in pearson_dict_sorted.items():print(f'key : {k}\tvalue : {v}')

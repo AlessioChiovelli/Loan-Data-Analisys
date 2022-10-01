@@ -44,7 +44,8 @@ def evaluate():
         info_gain_dict[column] = info_gain
         # print(f"Information Gain of column {column} is {info_gain}")
     
-    return info_gain_dict
+    ig_dict_sorted = dict(sorted(info_gain_dict.items(), key=lambda x:x[1]))
+    return ig_dict_sorted
 
 
 

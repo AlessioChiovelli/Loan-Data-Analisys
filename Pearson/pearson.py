@@ -23,7 +23,9 @@ def evaluate():
     # bbox_inches - when set to 'tight' - does not allow the labels to be cropped
     plt.savefig('heatmap.png', dpi=400, bbox_inches='tight')
     
-    return pearson_corr
+    pearson_dict_sorted = dict(sorted(pearson_corr.items(), key=lambda x:x[1]))
+    
+    return pearson_dict_sorted
     
 
 

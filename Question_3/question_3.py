@@ -20,7 +20,8 @@ def evaluate():
                                 365).apply(lambda element: abs(int(element)))
     dataset["APPROX_YEAR_REGISTRATION"] = (dataset["DAYS_REGISTRATION"] /
                                 365).apply(lambda element: abs(int(element)))
-    # sns.histplot(data=dataset,x="APPROX_AGE",kde=True,binwidth=1)
+    sns.histplot(data=dataset,x="APPROX_AGE",kde=True,binwidth=1, stat = "probability")
+    plt.show()
     # Plot the responses for different events and regions
     sns.jointplot(data=dataset,x="APPROX_AGE", y="APPROX_YEAR_REGISTRATION", kind="hex", color="#4CB391")
     plt.show()

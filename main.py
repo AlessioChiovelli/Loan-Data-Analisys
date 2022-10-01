@@ -7,8 +7,11 @@ from Question_1 import question_1 as question_1
 from Question_2 import question_2_1 as question_2_1
 from Question_2 import question_2_2 as question_2_2
 from Question_2 import question_2_3 as question_2_3
+from Question_3 import question_3 as question_3
 from Question_4 import question_4 as question_4
+from Question_5 import question_5 as question_5
 from Question_6 import question_6 as question_6
+from Question_6 import question_6_b as question_6_b
 from Question_7 import question_7 as question_7
 from Question_8 import question_8 as question_8
 from Question_9 import question_9 as question_9
@@ -31,21 +34,24 @@ if __name__ == '__main__':
     # question_2_1.evaluate()
     # question_2_2.evaluate()
     # question_2_3.evaluate()
+    # question_3.evaluate() ##TODO 
     # question_4.evaluate()
-    # question_6.evaluate()
+    # question_5.evaluate() ##TODO 
+    # question_6.evaluate() ##TODO 
+    question_6_b.evaluate() ##TODO 
     # question_7.evaluate()
-    # question_8.evaluate()
-    # question_9.evaluate()
-    # question_10.evaluate()
-    # question_11.evaluate()
-    # question_12.evaluate()
+    # question_8.evaluate() ##TODO 
+    # question_9.evaluate() ##TODO 
+    # question_10.evaluate() ##TODO 
+    # question_11.evaluate() ##TODO 
+    # question_12.evaluate() ##TODO 
     # question_13.evaluate()
-    # question_14.evaluate()
-    # question_15.evaluate()
+    # question_14.evaluate() ##TODO 
+    # question_15.evaluate() ##TODO 
     # pearson.evaluate()
-    ig_dict = ig.evaluate()
-    pearson_dict = pearson.evaluate()
+    # ig_dict = ig.evaluate()
+    # pearson_dict = pearson.evaluate()
     
-    # for k,v in ig_dict_sorted.items():print(f'key : {k}\tvalue : {v}')
+    # for k,v in ig_dict.items():print(f'key : {k}\tvalue : {v}')
     # print(3*'\n', 10 * '*', 3*'\n')
-    # for k,v in pearson_dict_sorted.items():print(f'key : {k}\tvalue : {v}')
+    # for k,v in pearson_dict.items():print(f'key : {k}\tvalue : {v}')

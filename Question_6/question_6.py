@@ -42,7 +42,7 @@ def evaluate():
 
     plt.title("Number of People by Education Level")
     plt.pie(slices, labels = edu_labels, # explode = explode, 
-        colors = colors[1:], wedgeprops = {"edgecolor": "black"})
+        colors = colors[1:], wedgeprops = {"edgecolor": "black"}, autopct='%1.1f%%')
     plt.tight_layout(pad = .8)
     plt.show()
 

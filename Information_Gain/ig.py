@@ -43,6 +43,8 @@ def evaluate():
         info_gain = entropy_of_target - conditional_entropy  # H(Y) - H(Y|X)
         info_gain_dict[column] = info_gain
         # print(f"Information Gain of column {column} is {info_gain}")
+    
+    return info_gain_dict
 
 
 

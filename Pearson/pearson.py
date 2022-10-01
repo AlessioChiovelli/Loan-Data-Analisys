@@ -23,6 +23,7 @@ def evaluate():
     # bbox_inches - when set to 'tight' - does not allow the labels to be cropped
     plt.savefig('heatmap.png', dpi=400, bbox_inches='tight')
     
+    return pearson_corr
     
 
 

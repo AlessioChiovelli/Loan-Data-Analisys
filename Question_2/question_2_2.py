@@ -56,7 +56,7 @@ def evaluate():
         labels.extend(["N_0","N_1"])
         values.extend(list(num_N.values()))
         
-    plt.title("Histogram of (un)Solvent clients With/Without Car(s)")
+    plt.title("Pie Chart of (un)Solvent clients With/Without Car(s)")
     plt.pie(values, labels = labels, shadow = True, autopct='%1.1f%%')
     plt.show()
     

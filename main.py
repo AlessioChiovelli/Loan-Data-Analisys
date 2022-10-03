@@ -34,19 +34,19 @@ if __name__ == '__main__':
     # question_2_1.evaluate()
     # question_2_2.evaluate()
     # question_2_3.evaluate()
-    # question_3.evaluate() ##TODO 
+    # question_3.evaluate() 
     # question_4.evaluate()
-    # question_5.evaluate() ##TODO 
-    # question_6.evaluate() ##TODO 
-    question_6_b.evaluate() ##TODO 
+    # question_5.evaluate() 
+    # question_6.evaluate() 
+    # question_6_b.evaluate() 
     # question_7.evaluate()
     # question_8.evaluate() ##TODO 
-    # question_9.evaluate() ##TODO 
-    # question_10.evaluate() ##TODO 
-    # question_11.evaluate() ##TODO 
-    # question_12.evaluate() ##TODO 
+    # question_9.evaluate() 
+    # question_10.evaluate()  
+    # question_11.evaluate()  
+    question_12.evaluate() ##TODO 
     # question_13.evaluate()
-    # question_14.evaluate() ##TODO 
+    # question_14.evaluate() 
     # question_15.evaluate() ##TODO 
     # pearson.evaluate()
     # ig_dict = ig.evaluate()
